@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/','Controller@homepage');
+
+Route::get('/', 'sitecontroll\\SiteController@home');
 
 
