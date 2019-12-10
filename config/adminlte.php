@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'MeAjudaAqui',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -30,12 +30,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>MeAjudaAqui</b>',
+    'logo_img' => 'imagehd/help.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'logo-help',
 
     /*
     |--------------------------------------------------------------------------
@@ -115,8 +115,8 @@ return [
     'right_sidebar' => false,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
-    'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
+    'right_sidebar_slide' => false,
+    'right_sidebar_push' => false,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
@@ -173,29 +173,35 @@ return [
     */
 
     'menu' => [
+        /*
         [
             'text' => 'search',
             'search' => true,
             'topnav' => true,
         ],
+        
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        
         [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
+        ], 
+
         ['header' => 'account_settings'],
+        */
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
+        /*
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
@@ -238,20 +244,28 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        ['header' => 'labels'],
+        ], 
+        */
+        ['header' => 'Ações'],
         [
-            'text'       => 'important',
+            'text'       => 'Solicitar Reparo',
             'icon_color' => 'red',
+            'url' => '/user/informar-problema/'
+
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Visualizar histórico',
             'icon_color' => 'yellow',
+            'url' => '/user/solicitacoes-pendentes/'
+
         ],
+        
+        /*
         [
             'text'       => 'information',
             'icon_color' => 'aqua',
         ],
+        */
     ],
 
     /*

@@ -9,9 +9,10 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-
-Route::get('/', 'sitecontroll\\SiteController@home');
-
-
+Route::group(['prefix' => 'user'], function () {
+    Route::get('/', 'User_control\\UserController@home');
+    Route::get('/informar-problema', 'User_control\\UserController@informar_problema');
+    Route::get('/solicitacoes-pendentes', 'User_control\\UserController@solicitacoes_pendentes');
+});
