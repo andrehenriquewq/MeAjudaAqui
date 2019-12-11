@@ -1,17 +1,15 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
+﻿{{-- resources/views/admin/dashboard.blade.php --}}
+
 @extends('adminlte::page')
 
-@section('title', 'MeAjudaAqui')
+@section('title', 'Tecnico')
 
 @section('content_header')
-    <h1 align="center">MeAjudaAqui</h1>
+    <h1>Painel para tecnicos em manutenção</h1>
 @stop
 
 @section('content')
-    <p align="center">O <em>MeAjudaAqui</em> é um sistema <strong>HelpDesk</strong> focado em oferecer soluções para grandes instituições!</p>
-    <center>
-    <img src="../imagehd/sistema-help-desk.png" width="80%">
-    </center>
+    <p>Seja bem-vindo.</p>
 @stop
 
 @section('css')
@@ -27,6 +25,7 @@
         if(this[i] && this[i].parentElement) {
             this[i].parentElement.removeChild(this[i]);
         }}}
-    var p1 = document.getElementsByTagName("a")[5].remove();
-    var p2 = document.getElementsByTagName("a")[5].remove();</script>
-@stop
+    var p1 = document.getElementsByTagName("a")[3].remove();
+    var p2 = document.getElementsByTagName("a")[3].remove();
+    </script>
+@stop   

@@ -16,3 +16,9 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/informar-problema', 'User_control\\UserController@informar_problema');
     Route::get('/solicitacoes-pendentes', 'User_control\\UserController@solicitacoes_pendentes');
 });
+
+Route::group(['prefix' => 'tecnico'], function(){
+    Route::get('/', 'Tecnico_control\\Tec_control@home');
+    Route::get('/solicitacoes', 'Tecnico_control\\Tec_control@solicitacoes');
+    Route::get('/enviar-comentario', 'Tecnico_control\\Tec_control@comentario');
+});

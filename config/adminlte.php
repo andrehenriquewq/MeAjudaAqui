@@ -259,6 +259,18 @@ return [
             'url' => '/user/solicitacoes-pendentes/'
 
         ],
+        [
+            'text'       => 'Ver solicitações',
+            'icon_color' => 'green',
+            'url' => '/tecnico/solicitacoes'
+
+        ],
+        [
+            'text'       => 'Enviar comentário',
+            'icon_color' => 'blue',
+            'url' => '/tecnico/enviar-comentario'
+
+        ],
         
         /*
         [
