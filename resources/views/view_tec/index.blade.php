@@ -27,5 +27,5 @@
         }}}
     var p1 = document.getElementsByTagName("a")[3].remove();
     var p2 = document.getElementsByTagName("a")[3].remove();
-    </script>
+    </script> 
 @stop   
