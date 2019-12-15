@@ -250,7 +250,7 @@ return [
         [
             'text'       => 'Solicitar Reparo',
             'icon_color' => 'red',
-            'url' => '/user/informar-problema/'
+            'url' => '/user/create/'
 
         ],
         [
