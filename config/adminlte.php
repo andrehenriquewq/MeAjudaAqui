@@ -179,20 +179,20 @@ return [
             'search' => true,
             'topnav' => true,
         ],
-        
+
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        
+
         [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ], 
+        ],
 
         ['header' => 'account_settings'],
         */
@@ -244,7 +244,7 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ], 
+        ],
         */
         ['header' => 'Ações'],
         [
@@ -256,7 +256,7 @@ return [
         [
             'text'       => 'Visualizar histórico',
             'icon_color' => 'yellow',
-            'url' => '/user/solicitacoes-pendentes/'
+            'url' => '/user/show/'
 
         ],
         [
@@ -271,7 +271,7 @@ return [
             'url' => '/tecnico/enviar-comentario'
 
         ],
-        
+
         /*
         [
             'text'       => 'information',
