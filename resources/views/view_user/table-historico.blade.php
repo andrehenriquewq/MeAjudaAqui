@@ -110,6 +110,6 @@
             this[i].parentElement.removeChild(this[i]);
         }}}
     var p1 = document.getElementsByTagName("a")[6].remove();
-    var p2 = document.getElementsByTagName("a")[6git ].remove();
+    var p2 = document.getElementsByTagName("a")[6].remove();
 </script>
 @stop
