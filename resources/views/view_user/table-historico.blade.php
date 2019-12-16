@@ -13,30 +13,85 @@
     <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Primeiro</th>
-      <th scope="col">Último</th>
-      <th scope="col">Nickname</th>
+      <th scope="col">id</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Local</th>
+      <th scope="col">Editar</th>
     </tr>
   </thead>
+  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form style="width: 700px;">
+              <input type="text" name="id" value="0">
+              <div class="form-group">
+                <select class="custom-select" name="tipo">
+                <option selected value="0">Qual o tipo do problema?</option>
+                <option value="1">1 - Estrutura</option>
+                <option value="2">2 - Energia</option>
+                <option value="3">3 - Ar-Condicionado</option>
+                <option value="4">4 - internet</option>
+                </select>
+              <br> <br>
+                <select class="custom-select" name="local">
+                  <option selected value="0">Informe o local</option>
+                  <option value="1">Sala 01</option>
+                  <option value="2">Sala 02</option>
+                  <option value="3">Sala 03</option>
+                  <option value="4">Laboratório 01</option>
+                  <option value="5">Laboratório 02</option>
+                  <option value="6">Laboratório 03</option>
+                  <option value="7">Refeitório</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descreva o problema</label>
+                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Salvar mudanças</button>
+              </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <form action="">
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+            Editar
+          </button>
+        </td>
+      </tr>
+    </form>
+    <form action="">
+      <tr>
+        <th scope="row">2</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+            Editar
+          </button>
+        </td>
+      </tr>
+    </form>
+
   </tbody>
 </table>
 @stop
