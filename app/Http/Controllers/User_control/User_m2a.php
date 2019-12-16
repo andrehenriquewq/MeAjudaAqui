@@ -47,7 +47,7 @@ class User_m2a extends Controller
      */
     public function show($id)
     {
-        //
+        return view('view_user.table-historico');
     }
 
     /**

@@ -256,7 +256,7 @@ return [
         [
             'text'       => 'Visualizar histórico',
             'icon_color' => 'yellow',
-            'url' => '/user/solicitacoes-pendentes/'
+            'url' => '/user/show/'
 
         ],
         [

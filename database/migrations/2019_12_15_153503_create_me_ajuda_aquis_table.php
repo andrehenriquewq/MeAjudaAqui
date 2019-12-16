@@ -19,7 +19,7 @@ class CreateMeAjudaAquisTable extends Migration
             $table->integer('tipo_problema');
             $table->string('local_problema', 50);
             $table->string('descricao_texto', 256);
-            $table->integer('usuario_id_usuario')->unsigned();
+            $table->integer('usuario_id_usuario')->unsigned(); #não aceita valores negativos
             $table->foreign('usuario_id_usuario')
                 ->references('id_usuario')->on('usuario');
             $table->timestamps();
