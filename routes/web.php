@@ -8,10 +8,14 @@ Route::group(['prefix' => 'user'], function () {
 }); */
 //Route::view('/h', 'view_user/table-historico');
 
-Route::resource('/user', 'User_Control\\User_m2a');
+Route::resource('/user', 'User_Control\\User_m2a')->middleware('auth');
 
 Route::group(['prefix' => 'tecnico'], function(){
     Route::get('/', 'Tecnico_control\\Tec_control@home');
     Route::get('/solicitacoes', 'Tecnico_control\\Tec_control@solicitacoes');
     Route::get('/enviar-comentario', 'Tecnico_control\\Tec_control@comentario');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
