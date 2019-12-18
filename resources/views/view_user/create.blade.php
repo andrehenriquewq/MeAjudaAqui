@@ -11,9 +11,11 @@
 
 @section('content')
 <center> 
-<form style="width: 700px;">
+<form style="width: 700px;" action="{{route('user.store')}}" method="POST">
+  {{ csrf_field() }}
+  {{ method_field("POST")}}
   <div class="form-group">
-  <select class="custom-select">
+  <select class="custom-select" name="tipo_problema">
   <option selected>Qual o tipo do problema?</option>
   <option value="1">1 - Estrutura</option>
   <option value="2">2 - Energia</option>
@@ -21,7 +23,7 @@
   <option value="4">4 - internet</option>
   </select>
   <br> <br>
-  <select class="custom-select">
+  <select class="custom-select" name="local_problema">
   <option selected>Informe o local</option>
   <option value="1">Sala 01</option>
   <option value="2">Sala 02</option>
@@ -34,7 +36,9 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Descreva o problema</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descricao_texto">
+
+    </textarea>
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
@@ -56,7 +60,7 @@
         if(this[i] && this[i].parentElement) {
             this[i].parentElement.removeChild(this[i]);
         }}}
-    var p1 = document.getElementsByTagName("a")[6].remove();
-    var p2 = document.getElementsByTagName("a")[6].remove();
-  </script>
+    var p1 = document.getElementsByTagName("a")[5].remove();
+    var p2 = document.getElementsByTagName("a")[5].remove();
+    </script>
 @stop

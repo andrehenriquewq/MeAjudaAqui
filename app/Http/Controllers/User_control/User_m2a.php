@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\MeAjudaAqui;
 class User_m2a extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,9 @@ class User_m2a extends Controller
      */
     public function index()
     {
-        return view('view_user.index');
+        $problema = MeAjudaAqui::all();
+        #chamar a view com
+        return view('view_user.index')->with(['problema'=>$problema]);
     }
 
     /**
@@ -25,7 +28,7 @@ class User_m2a extends Controller
      */
     public function create()
     {
-        return view('view_user.create');
+        return view('view_user.create')->with(['tipos' => MeAjudaAqui::$tiposDeProblemas]);
     }
 
     /**
@@ -36,7 +39,8 @@ class User_m2a extends Controller
      */
     public function store(Request $request)
     {
-        //
+      MeAjudaAqui::create($request->all());
+      return redirect()->route('user.index');
     }
 
     /**
@@ -47,7 +51,7 @@ class User_m2a extends Controller
      */
     public function show($id)
     {
-        return view('view_user.table-historico');
+       // return view('view_user.table-historico');
     }
 
     /**
@@ -58,7 +62,9 @@ class User_m2a extends Controller
      */
     public function edit($id)
     {
-        //
+        $problema = MeAjudaAqui::find($id);
+        #dd($problema);
+        return view('view_user.edit')->with(['problema'=>$problema]); // passando dados pra view
     }
 
     /**
@@ -70,7 +76,11 @@ class User_m2a extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $problema = MeAjudaAqui::find($id);
+
+        $problema->update($request->all());
+
+        return redirect()->route('user.index');
     }
 
     /**

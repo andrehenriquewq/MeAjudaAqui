@@ -7,21 +7,12 @@ use Illuminate\Support\Facades\Schema;
 class CreateMeAjudaAquisTable extends Migration
 {
     public function up()
-    {
-        Schema::create('usuario', function (Blueprint $table) {
-            $table->increments('id_usuario');
-            $table->integer('tipo_usuario');
-            $table->timestamps();
-        });
-
+    { 
         Schema::create('problema', function (Blueprint $table) {
-            $table->increments('id_problema');
+            $table->increments('id');
             $table->integer('tipo_problema');
-            $table->string('local_problema', 50);
+            $table->integer('local_problema');
             $table->string('descricao_texto', 256);
-            $table->integer('usuario_id_usuario')->unsigned(); #não aceita valores negativos
-            $table->foreign('usuario_id_usuario')
-                ->references('id_usuario')->on('usuario');
             $table->timestamps();
 
         });
@@ -32,15 +23,15 @@ class CreateMeAjudaAquisTable extends Migration
             $table->date('prazo_estabelecido');
             $table->integer('status_conserto');
             $table->string('descricao_atendimento', 256)->nullable();
-            $table->integer('problema_id_problema')->unsigned();
-            $table->foreign('problema_id_problema')
-                ->references('id_problema')->on('problema');
+            $table->integer('problema_id')->unsigned();
+            $table->foreign('problema_id')
+                ->references('id')->on('problema');
             $table->timestamps();
 
         });
 
         Schema::create('tecnico', function (Blueprint $table) {
-            $table->increments('id_tecnico');
+            $table->increments('id');
             $table->string('nome', 60);
             $table->string('tipo_tecnico', 20);
             $table->boolean('ocupado');
@@ -49,11 +40,11 @@ class CreateMeAjudaAquisTable extends Migration
         });
 
         Schema::create('atendimento_tecnico', function (Blueprint $table) {
-            $table->integer('atendimento_id_atendimento')->unsigned();
-            $table->integer('tecnico_id_tecnico');
-            $table->primary('atendimento_id_atendimento', 'tecnico_id_tecnico');
-            $table->foreign('atendimento_id_atendimento')
-                ->references('id_tecnico')->on('tecnico');
+            $table->integer('atendimento_id')->unsigned();
+            $table->integer('tecnico_id');
+            $table->primary('atendimento_id', 'tecnico_id');
+            $table->foreign('atendimento_id')
+                ->references('id')->on('tecnico');
             $table->timestamps();
 
         });

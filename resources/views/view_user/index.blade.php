@@ -8,10 +8,31 @@
 @stop
 
 @section('content')
-    <p align="center">O <em>MeAjudaAqui</em> é um sistema <strong>HelpDesk</strong> focado em oferecer soluções para grandes instituições!</p>
-    <center>
-    <img src="../imagehd/sistema-help-desk.png" width="80%">
-    </center>
+<h1 align="center">Histórico de solicitações</h1>
+    <p align="center">Se estiverem pendentes você pode <u>editá-los</u></p>
+    <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Tipo Problema</th>
+                <th scope="col">Local Problema</th>
+                <th scope="col">Descrição Problema</th>
+                <th scope="col">Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                @foreach ($problema as $problemas)
+                <tr>
+                <td>{{$problemas->getTipoProblema()}}</td>
+                <td>{{$problemas->getLocalProblema()}}</td>
+                <td>{{$problemas->descricao_texto}}</td>
+                <td><a class="btn btn-primary" href="{{ route('user.edit', $problemas->id) }}">Editar</a></td>
+                <!--<td><button type="button" class="btn btn-primary">Editar</button></td>-->
+                </tr>
+                @endforeach
+            </form>
+            </tbody>
+          </table>
 @stop
 
 @section('css')
@@ -27,6 +48,9 @@
         if(this[i] && this[i].parentElement) {
             this[i].parentElement.removeChild(this[i]);
         }}}
-    var p1 = document.getElementsByTagName("a")[6].remove();
-    var p2 = document.getElementsByTagName("a")[6].remove();</script>
+    var p1 = document.getElementsByTagName("a")[5].remove();
+    var p2 = document.getElementsByTagName("a")[5].remove();
+    
+    
+    </script>
 @stop
